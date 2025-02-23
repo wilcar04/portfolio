@@ -3,8 +3,8 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="flex">
-      <div className="flex-1 my-14 mx-20 max-w-[24rem]">
+    <div className="relative py-18 w-full">
+      <div className="mx-8 sm:mx-20 max-w-[24rem]">
         <h5 className="text-2xl">Hi &#128075;</h5>
         <h1 className="mt-4 text-6xl font-bold tracking-tight">
           I&apos;m Wilson Carvajal
@@ -42,6 +42,9 @@ const Hero = () => {
             </a>
           </div>
         </div>
+      </div>
+      <div className="absolute -right-1/2 max-md:scale-125 md:-right-1/4 top-0 md:-top-32 w-full -z-10">
+        <img src="/src/assets/Hero Lights.png" alt="background lights" />
       </div>
     </div>
   );

@@ -5,8 +5,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="max-w-7xl mx-auto relative mt-32">
+      <main className="max-w-7xl mx-auto relative pt-32 overflow-hidden ">
         <Hero />
+        <div className="min-h-svh" />
       </main>
     </>
   );
