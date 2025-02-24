@@ -23,6 +23,14 @@
   --font-sans: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   /* Animations */
+
+  --drop-shadow-title: 0 3px 15px var(--color-t-1);
+}
+
+@layer components {
+  .container {
+    @apply p-5 sm:p-16;
+  }
 }
 
 :root {

@@ -1,72 +1,34 @@
-import {
-  animate,
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-} from "framer-motion";
+import { motion, useTime, useTransform } from "framer-motion";
 
 const ButtonAnimatedGradient = ({ children, className }) => {
-  const firstColor = "#3cd5dd";
-  const secondColor = "#3a0ca3";
+  const time = useTime();
 
-  const primary = useMotionValue(firstColor);
-  const second = useMotionValue(secondColor);
-  const background = useMotionTemplate`linear-gradient(to right, ${primary}, ${second})`;
+  const rotate = useTransform(time, [0, 3000], [0, 360], {
+    clamp: false,
+  });
 
-  function handleHover() {
-    animate(primary, secondColor, {
-      duration: 1,
-      repeat: 1,
-      repeatType: "reverse",
-      ease: "easeOut",
-    });
-    animate(second, firstColor, {
-      duration: 1,
-      repeat: 1,
-      repeatType: "reverse",
-      ease: "easeOut",
-    });
-  }
-
-  //   const [gradient, setGradient] = useState(0);
-
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setGradient((prev) => (prev + 1) % gradients.length);
-  //     }, 1000); // Change every 4 seconds
-
-  //     return () => clearInterval(interval);
-  //   });
-
-  //   const gradients = [
-  //     "linear-gradient(90deg, var(--color-one), var(--color-two))",
-  //     "linear-gradient(90deg, var(--color-two), var(--color-one))",
-  //   ];
-
-  // const [scope, animate] = useAnimate();
-
-  // function handleHover() {
-  //   animate(
-  //     scope.current,
-  //     {
-  //       background:
-  //         "linear-gradient(to right, var(--color-two)}, var(--color-one))",
-  //     },
-  //     { duration: 1 }
-  //   );
-  // }
+  const rotatingBg = useTransform(rotate, (r) => {
+    return `conic-gradient(from ${r}deg, #3cd5dd, #3a0ca3, #3cd5dd)`;
+  });
 
   return (
-    <motion.button
-      // ref={scope}
-      onHoverStart={handleHover}
-      style={{
-        background,
-      }}
-      className={className}
-    >
-      {children}
-    </motion.button>
+    <div className="group h-full relative">
+      <motion.div
+        className="absolute -inset-[1px] rounded-xl -z-10"
+        style={{ background: rotatingBg }}
+      />
+      <button className="bg-n-3 h-full rounded-xl flex items-center px-6 ">
+        {children}
+      </button>
+
+      <div className="group-hover:scale-125 duration-300 ease-out absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-10 h-34 w-34 flex">
+        <img
+          src="/src/assets/Ellipse Button.png"
+          alt="Ellipse"
+          className="object-contain m-auto"
+        />
+      </div>
+    </div>
   );
 };
 
