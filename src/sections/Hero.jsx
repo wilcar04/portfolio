@@ -1,5 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import ButtonAnimatedGradient from "../components/ButtonAnimatedGradient";
 
 const Hero = () => {
   return (
@@ -15,11 +16,18 @@ const Hero = () => {
         </p>
 
         <div className="flex h-[3rem] mt-14 ">
-          <button className="bg-linear-to-r from-one to-two rounded-2xl p-0.5">
+          <ButtonAnimatedGradient className="group relative rounded-2xl p-0.5 cursor-pointer">
             <div className="bg-n-3 h-full rounded-2xl flex items-center px-4">
               Contact me
             </div>
-          </button>
+            <div className="group-hover:scale-125 duration-300 ease-out absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-10 h-34 w-34 flex">
+              <img
+                src="/src/assets/Ellipse Button.png"
+                alt="Ellipse"
+                className="object-contain m-auto"
+              />
+            </div>
+          </ButtonAnimatedGradient>
 
           <div className="flex gap-5 ml-8">
             <a
