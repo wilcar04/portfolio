@@ -5,19 +5,19 @@ import ButtonAnimatedGradient from "../components/ButtonAnimatedGradient";
 const Hero = () => {
   return (
     <div className="relative py-18 w-full">
-      <div className="mx-8 sm:mx-20 max-w-[24rem]">
-        <h5 className="text-2xl">Hi &#128075;</h5>
-        <h1 className="mt-4 text-6xl font-bold tracking-tight">
+      <div className="ml-32 max-w-[28rem]">
+        <h5 className="text-3xl">Hi &#128075;</h5>
+        <h1 className="mt-4 text-7xl font-bold tracking-tight">
           I&apos;m Wilson Carvajal
         </h1>
-        <p className="mt-5 text-t-2">
+        <p className="mt-7 text-t-2 text-lg font-medium">
           Frontend developer with a passion for beautiful, useful and intuitive
           user interfaces
         </p>
 
-        <div className="flex h-[3rem] mt-14 ">
+        <div className="flex h-[3.3rem] mt-14 ">
           <ButtonAnimatedGradient className="group relative rounded-2xl p-0.5 cursor-pointer">
-            <div className="bg-n-3 h-full rounded-2xl flex items-center px-4">
+            <div className="bg-n-3 h-full rounded-2xl flex items-center px-6">
               Contact me
             </div>
             <div className="group-hover:scale-125 duration-300 ease-out absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 -z-10 h-34 w-34 flex">
@@ -51,9 +51,12 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute -right-1/2 max-md:scale-125 md:-right-1/4 top-0 md:-top-32 w-full -z-10">
+      <div className="absolute left-1/2 -translate-x-1/5 max-md:scale-125 top-0 md:-top-44 w-full -z-10">
         <img src="/src/assets/Hero Lights.png" alt="background lights" />
       </div>
+      {/* <div className="absolute -right-1/2 max-md:scale-125 md:-right-2/5 top-0 md:-top-44 w-full -z-10">
+        <img src="/src/assets/Hero Lights.png" alt="background lights" />
+      </div> */}
     </div>
   );
 };

@@ -7,7 +7,7 @@ export default function Navbar() {
         {navLinks.map((item) => (
           <a
             key={item.id}
-            className="hover:text-one duration-300 ease-in-out"
+            className="hover:text-one duration-300 ease-in-out shrink-0"
             href={item.href}
           >
             {item.name}
